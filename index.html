@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BookMate Chat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background: #ffe4f2;
+      color: #333;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3em;
+      color: #222;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2em;
+      color: #444;
+      margin-bottom: 30px;
+    }
+
+    .chatbox {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>📚 Welcome to <span style="color: #d35400;">BookMate!</span></h1>
+  <p>Chat with our assistant to find your next great read <span>📖</span></p>
+
+  <!-- Watson Assistant Embed Code -->
+  <div class="chatbox">
+    <script>
+      window.watsonAssistantChatOptions = {
+        integrationID: "391012bd-2f2c-4170-9f76-d22bd3872a56", // your integration ID
+        region: "au-syd", // your region
+        serviceInstanceID: "0177e986-03c5-4ecb-bc0d-72f322aa7dc8", // your service instance ID
+        onLoad: function(instance) { instance.render(); }
+      };
+      setTimeout(function() {
+        const t = document.createElement('script');
+        t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/latest/WatsonAssistantChatEntry.js";
+        document.head.appendChild(t);
+      });
+    </script>
+  </div>
+</body>
+</html>
